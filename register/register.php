@@ -48,7 +48,7 @@ $string=md5(rand());
     $_token=substr($string,0,6);
 require '../assets/usr_class.php';
 $obj=new usr_class();
-$_result=$obj->signup($_email,$_password,$_fname,$_lname,$_cname,$_mobile,$_address,$_city,$_state,$_zip,$_country,$_type,$_token);
+$_result=$obj->signup($_email,$_password,$_image1,$_fname,$_lname,$_cname,$_mobile,$_address,$_city,$_state,$_zip,$_country,$_type,$_token);
 
 if($_result===true)
 {

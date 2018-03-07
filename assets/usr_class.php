@@ -23,10 +23,24 @@ public function getlogin($_email1)
     usr_class::disconnect();
 
 }
-public function signup($_email,$_password,$_fname,$_lname,$_cname,$_mobile,$_address,$_city,$_state,$_zip,$_country,$_type,$_token)
+public function delete($_email1)
 {
     $con=usr_class::connect();
-    $_sql="insert into user_tbl values('". $_email ."','". $_password ."','". $_fname ."','". $_lname ."','". $_cname ."','". $_mobile ."','". $_address ."','". $_city ."','". $_state ."','". $_country ."','". $_zip ."','".$_type."','". $_token ."','". 0 ."')";
+    $res=$con->query("select * from user_tbl where usr_email_id='".$_email1."'");
+    $row=$res->fetch_assoc();
+    unlink($row["image"]);
+    $con->query("delete from user_tbl where usr_email_id='".$_email1."'");
+    $con->query("delete from membership_tbl where fk_usr_email_id='".$_email1."'");
+    $con->query("delete from event_tbl where fk_usr_id='".$_email1."'");
+    $con->query("delete from guest_tbl where fk_usr_id='".$_email1."'");
+    return $res;
+    usr_class::disconnect();
+
+}
+public function signup($_email,$_password,$_image,$_fname,$_lname,$_cname,$_mobile,$_address,$_city,$_state,$_zip,$_country,$_type,$_token)
+{
+    $con=usr_class::connect();
+    $_sql="insert into user_tbl values('". $_email ."','". $_password ."','". $_image ."','". $_fname ."','". $_lname ."','". $_cname ."','". $_mobile ."','". $_address ."','". $_city ."','". $_state ."','". $_country ."','". $_zip ."','".$_type."','". $_token ."','". 0 ."')";
     echo $_sql;
     
     $res=$con->query($_sql);
@@ -34,20 +48,30 @@ public function signup($_email,$_password,$_fname,$_lname,$_cname,$_mobile,$_add
     usr_class::disconnect();
 
 }
-public function update($_name,$_mobile,$_gender,$_image1,$_image,$_email)
+public function update($_email,$_password,$_image1,$_fname,$_lname,$_cname,$_mobile,$_address,$_city,$_state,$_zip,$_country)
 {
     $con=usr_class::connect();
-    if($_image=="../image/")
+    if($_image1=="../image/")
     {
-        $_sql="update user_tbl set uname='". $_name ."',contact_no='". $_mobile ."',gender='". $_gender ."' where email_id='".$_email."'";
+        $_sql="update user_tbl set usr_first_name='". $_fname ."',usr_last_name='". $_lname ."',usr_company_name='".$_cname."',usr_country='".$_country."',usr_postal_code='".$_zip."',usr_city='".$_city."',usr_state='".$_state."',usr_address='".$_address."',usr_phone_number='".$_mobile."' where usr_email_id='".$_email."'";
+        $res=$con->query($_sql);
+        echo $_sql;
     }
     else
     {
         unlink($_image1);
-    $_sql="update user_tbl set uname='". $_name ."',contact_no='". $_mobile ."',gender='". $_gender ."',image='". $_image ."' where email_id='".$_email."'";
-    
+        $_sql="update user_tbl set image='".$_image1."',usr_first_name='". $_fname ."',usr_last_name='". $_lname ."',usr_company_name='".$_cname."',usr_country='".$_country."',usr_postal_code='".$_zip."',usr_city='".$_city."',usr_state='".$_state."',usr_address='".$_address."',usr_phone_number='".$_mobile."' where usr_email_id='".$_email."'";
+        $res=$con->query($_sql);
+        echo $_sql;
     }
-    $res=$con->query($_sql);
+    if($_password!=null)
+    {
+        $_sql="update user_tbl set usr_password='". $_password ."' where usr_email_id='".$_email."'"; 
+        $res=$con->query($_sql);
+        echo $_sql;
+    }
+    echo $_sql;
+    
     return $res;
     usr_class::disconnect();
 
