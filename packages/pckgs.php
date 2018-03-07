@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-    include '../assets/rightlinks2.php';
+    include '../assets/rightlinks3.php';
 ?>
 <div class="wojo-grid">
 <div id="logo"><a href="..\index.htm" class="logo"><img src="..\uploads\logo.png" alt="Membership Manager"></a></div><h1>Membership Packages</h1>
