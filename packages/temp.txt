@@ -1,0 +1,37 @@
+<div class="column" id="item_5">
+    <div class="wojo shadow attached segment content-center relative">
+            <img src="..\uploads\memberships\silver.png" alt="">
+            <div class="wojo space divider"></div>
+      <h4 class="content-center">$1.99 Silver</h4>
+      <p>Recurring No</p>
+      <p class="wojo tiny text">This is 7 days basic membership.</p>
+    </div>
+  </div>
+    <div class="column" id="item_2">
+    <div class="wojo shadow attached segment content-center relative">
+            <img src="..\uploads\memberships\bronze.png" alt="">
+            <div class="wojo space divider"></div>
+      <h4 class="content-center">$2.99 Bronze</h4>
+      <p>Recurring Yes</p>
+      <p class="wojo tiny text">This is 30 days basic membership</p>
+    </div>
+  </div>
+    <div class="column" id="item_3">
+    <div class="wojo shadow attached segment content-center relative">
+            <img src="..\uploads\memberships\gold.png" alt="">
+            <div class="wojo space divider"></div>
+      <h4 class="content-center">$6.99 Gold</h4>
+      <p>Recurring No</p>
+      <p class="wojo tiny text">This is 90 days basic membership</p>
+    </div>
+  </div>
+    <div class="column" id="item_4">
+    <div class="wojo shadow attached segment content-center relative">
+            <img src="..\uploads\memberships\platinum.png" alt="">
+            <div class="wojo space divider"></div>
+      <h4 class="content-center">$149.99 Platinum</h4>
+      <p>Recurring Yes</p>
+      <p class="wojo tiny text">Platinum Yearly Subscription</p>
+    </div>
+  </div>
+  </div>
