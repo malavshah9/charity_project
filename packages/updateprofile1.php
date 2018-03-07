@@ -51,7 +51,7 @@ $_result=$obj->update($_email,$_password,$_image1,$_fname,$_lname,$_cname,$_mobi
 
 if($_result===true)
 {
-    header('location:profile.php');
+    header('location:profile1.php');
 }
 else
 {

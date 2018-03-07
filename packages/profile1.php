@@ -40,11 +40,14 @@ $_image=$row["image"];
 </div>
 <div class="wojo-grid">
 <div id="logo"><a href="http://www.wojoscripts.com/mmp/" class="logo"><img src="http://www.wojoscripts.com/mmp/uploads/logo.png" alt="Membership Manager"></a></div><div class="content-center"><img src="http://www.wojoscripts.com/mmp/uploads/avatars/av1.jpg" alt="" class="avatar"></div>
-<?php
-    include '../Assets/dashboard1links.php';
-?>
+<div class="wojo big space divider"></div>
+<div class="clearfix" id="tabs-alt"> <a class="static" href="dashboard3.php"> My Hosted Events</a> 
+<a class="static" href="hostevents.php" >Post an Event</a> 
+<a class="static" href="guestlist.php">Guest List</a> 
+<a class="static" href="profile1.php"  class="active">My Profile</a> 
+</div>
 <div class="login-form">
-  <form method="post" enctype="multipart/form-data" id="wojo_form" action="updateprofile.php" name="wojo_form">
+  <form method="post" enctype="multipart/form-data" id="wojo_form" action="updateprofile1.php" name="wojo_form">
     <div class="wojo form">
       <input type="file" name="image" data-type="image" data-exist="../image/<?php echo $_image;?>" accept="image/png, image/jpeg">
       <div class="wojo big space divider"></div>
@@ -140,4 +143,3 @@ $(document).ready(function() {
 </script>
 </body>
 </html>
-
